@@ -19,6 +19,7 @@
   </environment>
   </environments>
   <mappers>
- <mapper resource='com/sivalabs/mybatisdemo/mappers/UserMapper.xml'/>
+ 	<mapper resource='com/sivalabs/mybatisdemo/mappers/UserMapper.xml'/>
+ 	<mapper class='com.sivalabs.mybatisdemo.mappers.BlogMapper' />
   </mappers>
 </configuration>
