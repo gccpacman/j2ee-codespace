@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mobisoft">
+
+<select id="getAllStudent" parameterType="int" resultType="Student">
+select rollNo as "rollNo", studentName as "studentName", marks as "marks"
+from studentdb.Student order by rollNo
+</select>
+
+<insert id="createStudent" keyColumn="rollNo" useGeneratedKeys="true" parameterType="Student">
+insert into studentdb.Student (studentName, marks)
+value(#{studentName}, #{marks})
+</insert>
+
+<update id="updateStudent" parameterType="Student">
+update studentdb.Student set studentName=#{studentName}, marks=#{marks}
+where rollNo=#{rollNo}
+</update>
+
+<delete id="deleteStudent" parameterType="int">
+delete from studentdb.Student where rollNo=#{rollNo}
+</delete>
+
+</mapper>
